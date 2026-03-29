@@ -1,0 +1,10 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: activos_db
+    environment:
+      POSTGRES_DB: activosapp
+      POSTGRES_USER: matias
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5433:5432"
