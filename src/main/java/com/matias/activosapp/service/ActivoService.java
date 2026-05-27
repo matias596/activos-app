@@ -25,7 +25,7 @@ public class ActivoService {
                 .getName();
         Cliente cliente = clienteRepository.findClienteByEmail(email)
                 .orElseThrow(() -> new ResourceNotFoundException("Cliente no encontrado"));
-        Activo activo1 = new Activo(activo.getCategoria(),cliente);
+        Activo activo1 = new Activo(activo.getCategoria(),cliente,activo.getDescripcion());
         repository.save(activo1);
 
         return new ActivoResponse(activo1.getIdActivo(), activo1.getCategoria());

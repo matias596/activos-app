@@ -13,4 +13,5 @@ import jakarta.validation.constraints.NotNull;
 public class ActivoRequest {
     @NotNull(message = "La categoría es obligatoria")
     Categoria categoria;
+    String descripcion;
 }

@@ -19,6 +19,7 @@ import java.util.function.Function;
 @Service
 public class JwtService {
 
+    //TODO: mover la Secret key a variable de entorno antes de deploy
     private static final String SECRET_KEY = "98e5ddae25671d15c12f4a781e1bc47cf7eb14704c663f03f8a409e92f2bdf62";
     public String extractUserName(String jwtToken) {
         return extractClaim(jwtToken,Claims::getSubject);

@@ -13,6 +13,8 @@ public class Activo {
     @Enumerated(EnumType.STRING)
     private Categoria categoria;
 
+    private String descripcion;
+
     @OneToMany(mappedBy = "activo")
     private List<Gasto> gastos;
 
@@ -23,9 +25,10 @@ public class Activo {
     public Activo() {
     }
 
-    public Activo(Categoria categoria, Cliente cliente) {
+    public Activo(Categoria categoria, Cliente cliente, String descripcion) {
         this.categoria = categoria;
         this.cliente = cliente;
+        this.descripcion = descripcion;
     }
 
     public Long getIdActivo() {
