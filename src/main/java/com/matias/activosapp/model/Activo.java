@@ -42,4 +42,5 @@ public class Activo {
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
+    public String getDescripcion(){return descripcion;}
 }

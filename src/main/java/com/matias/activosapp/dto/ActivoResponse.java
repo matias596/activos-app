@@ -11,4 +11,5 @@ import lombok.NoArgsConstructor;
 public class ActivoResponse {
     private Long id;
     private Categoria categoria;
+    private String descripcion;
 }
