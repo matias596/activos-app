@@ -31,4 +31,9 @@ public class ActivoController {
     public ResponseEntity<List<ActivoResponse>> listarActivos(){
         return ResponseEntity.ok(service.listarActivos());
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ActivoResponse> obtenerActivo(@PathVariable Long id){
+        return ResponseEntity.ok(service.obtenerActivo(id));
+    }
 }

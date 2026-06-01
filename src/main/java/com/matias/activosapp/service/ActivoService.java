@@ -52,4 +52,23 @@ public class ActivoService {
                 ))
                 .toList();
     }
+
+    public ActivoResponse obtenerActivo(Long id) {
+        // por tema de seguridad checkeamos que pertenezca al usuario
+        String email = SecurityContextHolder
+                .getContext()
+                .getAuthentication()
+                .getName();
+        Cliente cliente = clienteRepository.findClienteByEmail(email)
+                .orElseThrow(() -> new ResourceNotFoundException("Cliente no encontrado"));
+
+        Activo activo = repository.findByIdActivoAndCliente(id,cliente)
+                .orElseThrow(()-> new ResourceNotFoundException("Activo no encontrado o no pertenece al usuario") );
+
+        return new ActivoResponse(
+                activo.getIdActivo(),
+                activo.getCategoria(),
+                activo.getDescripcion()
+        );
+    }
 }
