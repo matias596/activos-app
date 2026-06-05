@@ -47,4 +47,36 @@ public class TipoDeGasto {
     public TipoDeGasto() {
 
     }
+
+    public void setNombre(String nombre) {
+        this.nombre=nombre;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.catActivo=categoria;
+    }
+
+    public void setFrecuencia(Frecuencia frecuencia) {
+        this.frecuencia=frecuencia;
+    }
+
+    public void setDefault(boolean b) {
+        this.esDefault=b;
+    }
+
+    public Long getIdTipo() {
+        return idTipo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public Categoria getCatActivo() {
+        return catActivo;
+    }
+
+    public Frecuencia getFrecuencia() {
+        return frecuencia;
+    }
 }
